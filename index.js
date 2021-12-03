@@ -59,7 +59,7 @@ http.createServer((req, res) => {
                     .then(result => {
                         if (result) {
                             res.end(JSON.stringify({ 'result': true, "note": result.text }));
-                            // Notes.destroy({where: {id: result.id}}); // if you want delete message!!!
+                            Notes.destroy({where: {id: result.id}}); // if you want delete message!!!
                         }
                         else {
                             res.end(JSON.stringify({ 'result': false, "text": 'note not found' }));
